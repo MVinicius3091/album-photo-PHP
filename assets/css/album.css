@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Consolas, Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+div.zoom-photo {
+    position: fixed;
+    inset: 0;
+    width: 95%;
+    height: 90vh;
+    margin: auto;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(180deg, #6bd9fa, #fa7c41, #6bd9fa);
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.zoom-photo-enter {
+    animation: zoomPhotoEnter 1s linear reverse;
+    -webkit-animation: zoomPhotoEnter 1s linear reverse;
+}
+
+.zoom-photo-out {
+    animation: zoomPhotoOut 1s linear reverse;
+    -webkit-animation: zoomPhotoOut 1s linear reverse;
+}
+
+div.zoom-photo img.img-zoom {
+    width: 700px;
+    height: 450px;
+}
+
+div.zoom-photo button {
+    position: absolute;
+    cursor: pointer;
+}
+
+div.zoom-photo button#btn-close-zoom {
+    border: none;
+    padding: 5px 10px;
+
+    background-color: #ff0000;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+div.zoom-photo button#btn-close-zoom:hover {
+    color: #6bd9fa;
+}
+
+div.zoom-photo button#btn-next {
+    right: 0;
+    border: none;
+    background-color: transparent;
+}
+
+div.zoom-photo button#btn-back {
+    left: 0;
+    border: none;
+    background-color: transparent;
+}
+
+div.zoom-photo button:has(ion-icon) ion-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header {
+    border-bottom: solid orangered;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to left, #6bd9fa, #fa7c41, #6bd9fa);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: relative;
+}
+
+header div.box-cape-header {
+    font-family: Consolas, Arial, Helvetica, sans-serif;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+}
+
+header div.box-cape-header h3 {
+    font-family: Consolas, Arial, Helvetica, sans-serif;
+    background-color: #ffffffec;
+    padding: 5px 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+header form div:has(label) {
+    padding: 5px;
+    background-color: #ffffffec;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+header form div:has(label) button {
+    padding: 0 10px;
+    font-size: 1.2rem;
+    background-color: #fa7c41;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+} 
+
+header button:hover {
+    color: #6bd9fa;
+}
+
+header form div label {
+    font-weight: bold;
+}
+
+header div button#btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border: none;
+    background-color: #ff0000;
+    padding: 5px 10px;
+    border-bottom-left-radius: 5px;
+}
+
+main div.container {
+    margin: 20px 0;
+}
+
+main div.container div.box-photos {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+main div.container div.box-photos div {
+    position: relative;
+}
+
+main div.container div.box-photos div img {
+    cursor: pointer;
+}
+
+main div.container div.box-photos div:hover a {
+    opacity: 1;
+}
+
+main div.container div.box-photos div a {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    background-color: #000000;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    opacity: 0;
+}
+
+main div.container div.box-photos div a#delete-cape {
+    top: -10px;
+    right: -10px;
+    border: solid red 1px; 
+}
+
+main div.container div.box-photos div a#update-cape {
+    top: -10px;
+    left: -10px;
+    border: solid green 1px; 
+
+}
+
+@keyframes zoomPhotoEnter {
+    to {
+
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+
+    } from {
+
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+}
+
+@keyframes zoomPhotoOut {
+    to {
+        transform: scale()1;
+        -webkit-transform: scale()1;
+        -moz-transform: scale()1;
+        -ms-transform: scale()1;
+        -o-transform: scale()1;
+    } from {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+    }
+}

@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Consolas, Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+header {
+    border: solid;
+    padding: 20px;
+    margin: 0 0 10px 0;
+}
+
+main section div.box-cape {
+    border: solid;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main section div.box-cape div {
+    border: solid;
+    padding: 5px;
+    max-width: 220px;
+    text-align: center;
+    cursor: pointer;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    position: relative;
+
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+main section div.box-cape div:hover a {
+    opacity: 1;
+}
+
+main section div.box-cape div a {
+    opacity: 0;
+    text-decoration: none;
+    background-color: #000000;
+    display: grid;
+    place-items: center;
+    color: white;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    position: absolute;
+}
+
+main section div.box-cape div a#delete-cape {
+    border: solid red 1px; 
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+main section div.box-cape div a#update-cape {
+    border: solid green 1px; 
+    top: -10px;
+    left: -10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+main section div.box-cape div:hover {
+    background-color: #000000b9;
+}
+
+iframe {
+    position: fixed;
+    background-color: #020202d3;
+    inset: 0;
+    margin: auto;
+    width: 98%;
+    height: 95vh;
+    border: solid orangered;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
